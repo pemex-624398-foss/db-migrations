@@ -1,0 +1,35 @@
+version: "3.7"
+
+volumes:
+  pg-data:
+  pga-data:
+
+networks:
+  foss:
+
+services:
+  pg:
+    image: "postgres:14.2"
+    container_name: db-migrations_pg
+    environment:
+      POSTGRES_PASSWORD: "f055"
+    volumes:
+      - "pg-data:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+    networks:
+      - foss
+    restart: on-failure
+  pga:
+    image: dpage/pgadmin4:6.10
+    container_name: db-migrations_pga
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pemex.com
+      PGADMIN_DEFAULT_PASSWORD: pgAdm1n
+    volumes:
+      - "pga-data:/var/lib/pgadmin"
+    networks:
+      - foss
+    ports:
+      - "5433:80"
+    restart: on-failure

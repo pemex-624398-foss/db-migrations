@@ -1,0 +1,1 @@
+postgresql -c "Server=localhost;Database=foss_dbm;User Id=postgres;Password=f055;" -l "Migrations" -s public
