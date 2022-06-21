@@ -12,7 +12,7 @@ Migraciones de bases de datos PostgreSQL.
     * security.user
 4. Importar datos en las tablas creadas
 5. Crear vista para consultar datos del usuario y el nombre del país al que pertenece: globalization.user_extended
-6. Crear función para consulta de usuarios por país: fn_user_select
+6. Crear función para consulta de usuarios por país: globalization.fn_user_select
 
 
 ## Preparación
