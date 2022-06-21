@@ -89,7 +89,7 @@ dropdb -h localhost -U postgres foss_dbm
 docker exec -i db-migrations_pg psql -U postgres < "Migrations/2022/05/V2022_05_03_001__Crear_esquemas.sql"
 
 # Opción 2:
-psql -h localhost -U postgres -f "Migrations/2022/05/V2022_05_03_001__Crear_esquemas.sql"
+psql -h localhost -U postgres -f "Migrations/2022/05/V2022_05_03_001__Crear_esquemas.sql" foss_dbm
 
 # Optimizado
 for SCRIPT in $(ls Migrations/2022/05 | sort); do psql -h localhost -U postgres -f "Migrations/2022/05/$SCRIPT" foss_dbm; done
